@@ -1,0 +1,23 @@
+name: publish-pypi
+# This workflow is triggered on pushes to the repository.
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: publish-pypi
+    runs-on: ubuntu-latest
+    steps:
+      - name: build wheels
+        uses: RalfG/python-wheels-manylinux-build@v0.2.2-manylinux2010_x86_64
+        with:
+          python-versions: 'cp36-cp36m cp37-cp37m cp38-cp38'
+          package-path: 'pypi_example'
+      - name: Publish a Python distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
+          repository_url: https://test.pypi.org/legacy/
