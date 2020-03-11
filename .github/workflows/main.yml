@@ -1,6 +1,6 @@
 name: publish-pypi
 # This workflow is triggered on pushes to the repository.
-on: 
+on:
   push:
     branches:
       - master
@@ -10,11 +10,10 @@ jobs:
     name: publish-pypi
     runs-on: ubuntu-latest
     steps:
-      - name: build wheels
+      - name: Build wheels
         uses: RalfG/python-wheels-manylinux-build@v0.2.2-manylinux2010_x86_64
         with:
           python-versions: 'cp36-cp36m cp37-cp37m cp38-cp38'
-          package-path: 'pypi_example'
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
