@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='pypi-example',
+    name='publish-pypi-example',
     packages=['pypi_example', 'pypi_example/extention/'],
     version='0.0.1',
     license='MIT',
