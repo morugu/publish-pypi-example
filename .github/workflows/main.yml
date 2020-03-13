@@ -1,9 +1,6 @@
 name: publish-pypi
 # This workflow is triggered on pushes to the repository.
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
   build:
