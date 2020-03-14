@@ -10,7 +10,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='publish-pypi-example',
     packages=['pypi_example', 'pypi_example/extention/'],
-    version='0.0.3',
+    version='0.0.4',
     license='MIT',
     install_requires=['requests'],
     author='Shoya Shiraki',
